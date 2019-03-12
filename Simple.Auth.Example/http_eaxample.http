@@ -1,0 +1,39 @@
+### get metadata
+GET http://localhost:5000/odata/$metadata
+
+
+
+### get all users v1
+GET http://localhost:5000/v1/users
+
+### get all users v1 with filter
+GET http://localhost:5000/v1/users?$filter=lastName eq 'Snow'
+
+
+
+
+### get users v2 with filter
+GET http://localhost:5000/v2/users?$filter=lastName eq 'Snow'
+
+### get users v2 sorted by first name"
+GET http://localhost:5000/v2/users?$orderby=firstName asc
+
+
+
+
+### get users v3 with filter
+GET http://localhost:5000/v3/users?$filter=lastName eq 'Snow'
+
+### get users v3 password (Уязвимый пока закооменчен аттрибут)
+GET http://localhost:5000/v3/users?$filter=(startswith(password, 'Ho') eq true) and login eq 'hodor'
+
+
+
+
+### get users v4 with filter
+GET http://localhost:5000/v4/users?$filter=lastName eq 'Snow'
+
+### get users v4 with filter (throw exception) fixed with projection
+GET http://localhost:5000/v4/users?$filter=(startswith(password, 'I') eq true) and login eq 'admin'
+
+###
