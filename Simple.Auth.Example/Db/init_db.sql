@@ -1,6 +1,6 @@
 
 CREATE TABLE public."user" (
-   id integer,
+   	id integer,
 	login text,
 	firstname text,
 	lastname text,
